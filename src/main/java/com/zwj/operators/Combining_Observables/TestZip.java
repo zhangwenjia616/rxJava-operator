@@ -1,4 +1,4 @@
-package com.zwj.operator;
+package com.zwj.operators.Combining_Observables;
 
 import java.util.Arrays;
 import java.util.List;

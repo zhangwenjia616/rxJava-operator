@@ -1,4 +1,4 @@
-package com.zwj.operator;
+package com.zwj.subject;
 
 import rx.Observable;
 import rx.Observer;
@@ -8,41 +8,7 @@ import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.subjects.PublishSubject;
 
-public class MyTest {
-
-  static void printNames() {
-    String[] names = {"a", "b"};
-    Observable.from(names).subscribe(new Action1<String>() {
-      @Override
-      public void call(String name) {
-        System.out.println("name is: " + name);
-      }
-    });
-  }
-
-  public static String helloWorld() {
-    return "Hello World";
-  }
-
-  public static void testJust() {
-    Observable<String> observableString = Observable.just(helloWorld());
-    observableString.subscribe(new Observer<String>() {
-      @Override
-      public void onCompleted() {
-        System.out.println("Observable completed");
-      }
-
-      @Override
-      public void onError(Throwable e) {
-        System.out.println("Oh no! Something wrong happened!");
-      }
-
-      @Override
-      public void onNext(String message) {
-        System.out.println(message);
-      }
-    });
-  }
+public class TestPublishSubject {
 
   public static void testPublishProject() {
     // PublishSubject 同时是生产者和消费者
@@ -83,7 +49,6 @@ public class MyTest {
       }
     });
 
-    
     Observable.create(new Observable.OnSubscribe<Integer>() {
       @Override
       public void call(Subscriber<? super Integer> subscriber) {
@@ -101,18 +66,13 @@ public class MyTest {
   }
 
   public static void main(String[] args) {
-    // printNames();
-    // testJust();
-    // testPublishProject();
-    
+    testPublishProject();
     test();
   }
-  
+
   public static String potentialException(String s) throws Exception {
     return "...";
   }
-  
-
 
 }
 

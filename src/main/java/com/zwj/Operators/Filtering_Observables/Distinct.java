@@ -15,7 +15,7 @@ import rx.Observable;
 public class Distinct {
 
   public static void testDistinct() {
-    List<String> words = Arrays.asList("a", "a", "a", "a", "b", "c", "d", "e", "f");
+    List<String> words = Arrays.asList("a", "b", "a", "b", "c", "d", "b", "e", "f");
     Observable.from(words).distinct().subscribe(System.out::println);
   }
 

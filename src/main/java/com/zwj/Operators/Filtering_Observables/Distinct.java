@@ -5,7 +5,14 @@ import java.util.List;
 
 import rx.Observable;
 
-public class TestDistinct {
+/**
+ * suppress duplicate items emitted by an Observable
+ * @ClassName Distinct 
+ * @Description
+ * @author zhangwj@yiche.com 
+ * @date Dec 11, 2016 7:43:23 PM
+ */
+public class Distinct {
 
   public static void testDistinct() {
     List<String> words = Arrays.asList("a", "a", "a", "a", "b", "c", "d", "e", "f");
@@ -16,7 +23,4 @@ public class TestDistinct {
     testDistinct();
   }
  
-  // test 对象 TODO
-  
-  
 }

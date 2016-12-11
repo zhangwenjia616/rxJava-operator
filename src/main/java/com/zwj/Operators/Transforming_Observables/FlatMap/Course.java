@@ -1,4 +1,4 @@
-package com.zwj.Operators.Transforming_Observables.TestFlatMap;
+package com.zwj.Operators.Transforming_Observables.FlatMap;
 
 public class Course {
   

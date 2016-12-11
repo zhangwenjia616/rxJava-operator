@@ -8,13 +8,13 @@ import rx.Subscriber;
 import rx.functions.Func2;
 
 /**
- * 测试zip zipWith操作
+ * combine the emissions of multiple Observables together via a specified function and emit single
+ * items for each combination based on the results of this function
  */
-public class TestZip {
+public class Zip {
 
   /**
-   * 两个数据源的数据 按照Func规定的方式进行合并 最后消费者收到的事件 是合并后的数据源结果
-   * 生成的新的Observable对象的数据个数是 前面两个Observable最少的
+   * 两个数据源的数据 按照Func规定的方式进行合并 最后消费者收到的事件 是合并后的数据源结果 生成的新的Observable对象的数据个数是 前面两个Observable最少的
    */
   public static void testZip() {
     Observable<Integer> observable1 = Observable.just(1, 2, 3, 4, 5);
@@ -47,7 +47,8 @@ public class TestZip {
    * zips a provided stream with the existing stream
    */
   public static void testZipWith() {
-    List<String> words = Arrays.asList("the", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog");
+    List<String> words =
+        Arrays.asList("the", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog");
 
     Observable.from(words) // existing stream
         .zipWith(Observable.range(1, Integer.MAX_VALUE), // provided stream

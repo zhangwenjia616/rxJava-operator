@@ -6,7 +6,14 @@ import java.util.List;
 import rx.Observable;
 import rx.functions.Action1;
 
-public class TestFrom {
+/**
+ * convert some other object or data structure into an Observable
+ * @ClassName From 
+ * @Description
+ * @author zhangwj@yiche.com 
+ * @date Dec 11, 2016 9:02:34 PM
+ */
+public class From {
 
   public static void main(String[] args) {
     testArray();

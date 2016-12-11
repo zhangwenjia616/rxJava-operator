@@ -11,7 +11,7 @@ import rx.subjects.PublishSubject;
 public class TestPublishSubject {
 
   public static void testPublishProject() {
-    // PublishSubject 同时是生产者和消费者
+    // TestPublishSubject 同时是生产者和消费者
     PublishSubject<String> stringPublishSubject = PublishSubject.create();
 
     Subscription subscriptionPrint = stringPublishSubject.subscribe(new Observer<String>() {

@@ -3,7 +3,14 @@ package com.zwj.Operators.Creating_Observables;
 import rx.Observable;
 import rx.Observer;
 
-public class TestJust {
+/**
+ * convert an object or a set of objects into an Observable that emits that or those objects
+ * @ClassName Just 
+ * @Description
+ * @author zhangwj@yiche.com 
+ * @date Dec 11, 2016 9:02:08 PM
+ */
+public class Just {
 
   public static void main(String[] args) {
     testJust();

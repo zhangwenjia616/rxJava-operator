@@ -1,4 +1,4 @@
-package com.zwj.operators.Filtering_Observables;
+package com.zwj.Operators.Filtering_Observables;
 
 import java.util.Arrays;
 import java.util.List;

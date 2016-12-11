@@ -1,4 +1,4 @@
-package com.zwj.operators.Creating_Observables;
+package com.zwj.Operators.Creating_Observables;
 
 import rx.Observable;
 import rx.Observer;

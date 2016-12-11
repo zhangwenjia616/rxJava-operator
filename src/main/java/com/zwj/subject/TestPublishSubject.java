@@ -1,4 +1,4 @@
-package com.zwj.subject;
+package com.zwj.Subject;
 
 import rx.Observable;
 import rx.Observer;

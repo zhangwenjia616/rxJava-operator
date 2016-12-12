@@ -5,6 +5,8 @@ import java.util.List;
 
 import rx.Observable;
 import rx.Observer;
+import rx.Subscriber;
+import rx.functions.Action1;
 import rx.functions.Func1;
 
 /**
@@ -19,7 +21,19 @@ import rx.functions.Func1;
 public class FlatMap {
 
   public static void main(String[] args) {
-    testFlatMap();
+    // testFlatMap();
+    testSimpleFlatmap();
+  }
+
+  private static void testSimpleFlatmap() {
+    Observable.just(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        .flatMap(integer -> Observable.just("flat map: " + integer))
+        .subscribe(new Action1<String>() {
+          @Override
+          public void call(String t) {
+            System.out.println("onNext " + t);
+          }
+        });
   }
 
   private static void testFlatMap() {

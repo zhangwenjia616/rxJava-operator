@@ -22,6 +22,10 @@ public class Just {
 
   public static void testJust() {
     Observable<String> observableString = Observable.just(helloWorld());
+    
+    // emit a null data and the observer will call onNext onCompleted
+    // Observable<String> observableString = Observable.just(null);
+    
     observableString.subscribe(new Observer<String>() {
       @Override
       public void onCompleted() {
@@ -35,7 +39,7 @@ public class Just {
 
       @Override
       public void onNext(String message) {
-        System.out.println(message);
+        System.out.println("onNext " +message);
       }
     });
   }

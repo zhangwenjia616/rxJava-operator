@@ -5,9 +5,10 @@ import rx.Subscriber;
 
 /**
  * create an Observable from scratch by calling observer methods programmatically
- * @ClassName Create 
+ * 
+ * @ClassName Create
  * @Description
- * @author zhangwj@yiche.com 
+ * @author zhangwj@yiche.com
  * @date Dec 11, 2016 9:02:45 PM
  */
 public class Create {
@@ -21,6 +22,7 @@ public class Create {
       @Override
       public void call(Subscriber<? super String> subscriber) {
         subscriber.onNext("Hello: ");
+        // subscriber.onCompleted();
         subscriber.onNext("My friend,");
         subscriber.onNext("this is rxjava create method test.");
         subscriber.onCompleted();
@@ -30,14 +32,19 @@ public class Create {
     Subscriber<String> subscriber = new Subscriber<String>() {
       @Override
       public void onNext(String s) {
-        System.out.println(s);
+        System.out.println("onNext" + s);
       }
 
       @Override
-      public void onCompleted() {}
+      public void onCompleted() {
+        System.out.println("onCompleted");
+      }
 
       @Override
-      public void onError(Throwable e) {}
+      public void onError(Throwable e) {
+        System.out.println("onError");
+        e.printStackTrace();
+      }
     };
 
     observable.subscribe(subscriber);

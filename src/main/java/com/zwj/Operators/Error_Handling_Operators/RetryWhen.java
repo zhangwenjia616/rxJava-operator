@@ -34,14 +34,14 @@ public class RetryWhen {
       return error.flatMap(new Func1<Throwable, Observable<?>>() {
         @Override
         public Observable<?> call(Throwable throwable) {
-          // whether retry or not 
+          // whether retry or not
           if (++retryCount <= maxRetries) {
             // When this Observable calls onNext, the original Observable will be retried
             // (i.e.re-subscribed).
             System.out.println("get error, it will try after " + retryDelayMillis
                 + " millisecond, retry count " + retryCount + ", max is: " + maxRetries);
-             return Observable.just(null); // do retry just = next
-            //return Observable.timer(5, TimeUnit.SECONDS);
+            return Observable.just(null); // do retry just = next
+            // return Observable.timer(5, TimeUnit.SECONDS);
           }
           // Max retries hit. Just pass the error along.
           return Observable.error(throwable); // do on error

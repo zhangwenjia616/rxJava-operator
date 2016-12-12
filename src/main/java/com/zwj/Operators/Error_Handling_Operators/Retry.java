@@ -20,7 +20,7 @@ public class Retry {
   }
 
   private static void testRetry() {
-    createObserver().retry(1).subscribe(new Observer<Integer>() {
+    createObserver().retry(3).subscribe(new Observer<Integer>() {
       @Override
       public void onCompleted() {
         System.out.println("onCompleted");

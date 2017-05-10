@@ -21,8 +21,8 @@ import rx.functions.Func1;
 public class FlatMap {
 
   public static void main(String[] args) {
-    // testFlatMap();
-    testSimpleFlatmap();
+     testFlatMap();
+//    testSimpleFlatmap();
   }
 
   private static void testSimpleFlatmap() {

@@ -9,6 +9,7 @@ import rx.Subscriber;
  * Returns an Observable that emits only the first item emitted by the source Observable during
  * sequential time windows of a specified duration.
  * ThrottleFirst操作符则会定期发射这个时间段里源Observable发射的第一个数据
+ * 触发后的一定时间间隔内丢弃新的事件。常用作去抖动过滤，例如按钮的点击监听器
  * 抽样 过滤
  * 
  * @ClassName ThrottleFirst

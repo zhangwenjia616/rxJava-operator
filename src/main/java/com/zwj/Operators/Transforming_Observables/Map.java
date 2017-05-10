@@ -42,6 +42,10 @@ public class Map {
   public static void testMapLambda() {
     Observable.just("Hello, world!").map(s -> s + " -Zhang Wen Jia")
         .subscribe(s -> System.out.println(s));
+
+
+
+
   }
 
 
